@@ -73,6 +73,7 @@ p{
     border: none;
     width: 95%;  
     height: 100%;
+    outline: none;
     border-bottom-right-radius: 600px;
     
 }
@@ -81,6 +82,7 @@ p{
         border: none;    
         width: 600%;
         border-bottom-right-radius: 600px;
+        outline: none;
        
 }
 
