@@ -71,7 +71,7 @@ h2{
 
 
   #name{
-    width: 300px;
+    width: 350px;
     height: 15px;
     margin-left: 10px;
     outline: none;
@@ -79,8 +79,27 @@ h2{
   
   }
 
+  #surname{
+
+    width: 350px;
+    height: 15px;
+    margin-left: 10px;
+    outline: none;
+
+
+  }
+
+  #contact{
+
+    width: 350px;
+    height: 15px;
+    margin-left: 10px;
+    outline: none;
+
+  }
+
 #email{
-  width: 300px;
+  width: 350px;
   height: 15px;
   margin-left: 10px;
   outline: none;
@@ -89,7 +108,7 @@ h2{
 }
 
 #confirm-password{
-  width: 300px;
+  width: 350px;
   height: 15px;
   margin-left: 10px;
   outline: none;
@@ -97,7 +116,7 @@ h2{
 }
 
 #password{
-  width: 300px;
+  width: 350px;
   height: 15px;
   margin-left: 10px;
   outline: none;

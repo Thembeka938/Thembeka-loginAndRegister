@@ -1,10 +1,27 @@
+body{
+  background-image: url(./loginImg\ \(3\).jpg);
+  background-size: cover;
+  overflow: hidden;
+
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
+h1{  
+  
+    color:#5a84b1;
+    padding-left: 40%;
+    font-size: 3em;
+    margin-top: 2%;   
+  
+
+}
+
 th, td {
-  border: 1px solid black;
+  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
@@ -12,5 +29,23 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#removeButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color:#5a84b1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#removeButton:hover {
+  background-color:gray;
+}
+
 
 

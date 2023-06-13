@@ -1,45 +1,50 @@
 let users = JSON.parse(localStorage.getItem('users')) || [];
+
 function populateUserTable() {
-  let tableBody = document.querySelector('#userTable tbody');
+  let tableBody = document.querySelector('#userTableBody');
 
   tableBody.innerHTML = '';
 
   users.forEach(function(user, index) {
     let row = document.createElement('tr');
 
-    let nameCell = document.createElement('th');
+    let nameCell = document.createElement('td');
     nameCell.textContent = user.name;
     row.appendChild(nameCell);
 
-    let surnameCell = document.createElement('th');
+    let surnameCell = document.createElement('td');
     surnameCell.textContent = user.surname;
     row.appendChild(surnameCell);
 
-    let emailCell = document.createElement('th');
+    let emailCell = document.createElement('td');
     emailCell.textContent = user.email;
     row.appendChild(emailCell);
 
-    let contactCell = document.createElement('th');
+    let contactCell = document.createElement('td');
     contactCell.textContent = user.contact;
     row.appendChild(contactCell);
 
-    
+    row.setAttribute('data-index', index);
 
-        
-        tableBody.appendChild(row);
-      });
-    }
+    tableBody.appendChild(row);
+  });
+}
 
-    
-    populateUserTable();
+populateUserTable();
 
-    
-    function removeUser(index) {      
-      users.splice(index, 1);      
-      localStorage.setItem('users', JSON.stringify(users));  
+function removeUser(index) {
+  users.splice(index, 1);
+  localStorage.setItem('users', JSON.stringify(users));
+  populateUserTable();
+}
 
-      populateUserTable();
-    }
+function removeUsers() {
+  users = [];
+  localStorage.removeItem('users');
+  populateUserTable();
+}
+
+
     
 
    

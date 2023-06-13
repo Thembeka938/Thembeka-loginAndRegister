@@ -1,6 +1,6 @@
 function Login() {
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
 
   
   if (username.trim() === '' || password.trim() === '') {
@@ -9,7 +9,7 @@ function Login() {
   }
 
   
-  var user = {
+  let user = {
       username: username,
       password: password
   };
@@ -27,9 +27,9 @@ function Login() {
 }
 
 function handleFormInputChange() {
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
-  var loginButton = document.getElementById('loginButton');
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
+  let loginButton = document.getElementById('loginButton');
 
   
   if (username.trim() !== '' && password.trim() !== '') {
