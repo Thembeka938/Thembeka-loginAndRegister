@@ -1,50 +1,47 @@
-var users = [];
-
-
-var tableBody = document.querySelector('#userTable tbody');
-
-
+let users = JSON.parse(localStorage.getItem('users')) || [];
 function populateUserTable() {
-  
+  let tableBody = document.querySelector('#userTable tbody');
+
   tableBody.innerHTML = '';
 
-  
   users.forEach(function(user, index) {
-    var row = document.createElement('tr');
+    let row = document.createElement('tr');
 
-    
-    var nameCell = document.createElement('td');
+    let nameCell = document.createElement('th');
     nameCell.textContent = user.name;
     row.appendChild(nameCell);
 
-    
-    var emailCell = document.createElement('td');
-    emailCell.textContent = user.emailAddress;
+    let surnameCell = document.createElement('th');
+    surnameCell.textContent = user.surname;
+    row.appendChild(surnameCell);
+
+    let emailCell = document.createElement('th');
+    emailCell.textContent = user.email;
     row.appendChild(emailCell);
 
-    
-    var actionCell = document.createElement('td');
-    var removeButton = document.createElement('button');
-    removeButton.textContent = 'Remove User';
-    removeButton.classList.add('remove-button');
-    removeButton.addEventListener('click', function() {
-      removeUser(index);
-    });
-    actionCell.appendChild(removeButton);
-    row.appendChild(actionCell);
+    let contactCell = document.createElement('th');
+    contactCell.textContent = user.contact;
+    row.appendChild(contactCell);
 
     
-    tableBody.appendChild(row);
-  });
-}
 
+        
+        tableBody.appendChild(row);
+      });
+    }
 
-function removeUser(index) {
-  
-  users.splice(index, 1);
+    
+    populateUserTable();
 
-  
-  populateUserTable();
-}
+    
+    function removeUser(index) {      
+      users.splice(index, 1);      
+      localStorage.setItem('users', JSON.stringify(users));  
+
+      populateUserTable();
+    }
+    
+
+   
 
 

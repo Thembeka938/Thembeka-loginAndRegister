@@ -1,10 +1,12 @@
-var users = JSON.parse(localStorage.getItem('users')) || [];
+let users = JSON.parse(localStorage.getItem('users')) || [];
 
     function Register() {
-      var name = document.getElementById('name').value;
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-      var confirmPassword = document.getElementById('confirm-password').value;
+      let name = document.getElementById('name').value;
+      let surname = document.getElementById('surname').value;
+      let email = document.getElementById('email').value;
+      let contact = document.getElementById('contact').value;
+      let password = document.getElementById('password').value;
+      let confirmPassword = document.getElementById('confirm-password').value;
 
       
       if (password !== confirmPassword) {
@@ -13,7 +15,7 @@ var users = JSON.parse(localStorage.getItem('users')) || [];
       }
 
     
-      var userExists = users.some(function (user) {
+      let userExists = users.some(function (user) {
         return user.emailAddress === email;
       });
 
@@ -23,10 +25,12 @@ var users = JSON.parse(localStorage.getItem('users')) || [];
       }
 
   
-      var user = {
+      let user = {
         name: name,
-        emailAddress: email,
-        password: password
+        email: email,
+        surname: surname,
+        contact: contact,
+        password:password
       };
 
       users.push(user);
